@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>清潔工提示｜Chainsaw Link</title>
+<style>
+  :root{
+    --bg:#0f172a; --fg:#e2e8f0; --muted:#94a3b8; --accent:#22c55e; --card:#111827;
+    --radius:16px;
+  }
+  html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans TC",sans-serif;
+    display:grid;place-items:center}
+  .wrap{width:min(900px,92vw);padding:24px}
+  .card{background:var(--card);border:1px solid rgba(255,255,255,.12);
+    border-radius:var(--radius);padding:28px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .title{margin:0 0 .6rem 0;font-size:1.15rem;opacity:.9}
+  .line{font-size:1.05rem;line-height:1.7}
+  .en   {color:var(--muted);font-size:.98rem}
+  .btn{display:inline-block;margin-top:20px;padding:.9rem 1.2rem;border:0;
+    border-radius:12px;background:var(--accent);color:#0b1220;font-weight:700;
+    cursor:pointer}
+  .hint{margin-top:.75rem;font-size:.85rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+  <main class="wrap">
+    <section class="card">
+      <h2 class="title">清潔工人／Cleaner</h2>
+      <p class="line">
+        「唔好意思呀！我地由今朝清晨已經冇停過手清理，但十號風球真係太勁做唔切呀！你小心行呀！」
+        <br><span class="en"><em>“Sorry! We’ve been clearing non-stop since early morning, but the T10 typhoon is really too strong to keep up. Please watch your step!”</em></span>
+      </p>
+
+      <!-- 基本無JS版（同分頁開啟） -->
+      <a id="fallbackLink" class="btn"
+         href="https://sddaassddasd-collab.github.io/chainsaw/">
+        我等唔切喇，等我來！ / I can’t wait—let me do it!
+      </a>
+
+    </section>
+  </main>
+
+  <!-- 加強：若可使用 JS，亦改以 location.href 觸發同分頁跳轉 -->
+  <script>
+    (function(){
+      const link = document.getElementById('fallbackLink');
+      const url  = link.getAttribute('href');
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        // 同分頁開啟
+        window.location.href = url;
+      });
+    })();
+  </script>
+</body>
+</html>
